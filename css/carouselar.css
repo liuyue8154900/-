@@ -1,0 +1,158 @@
+/**
+ * carouselar v0.1.0 (http://tamerayd.in/carouselar)
+ * Copyright 2015 Tamer Aydin (http://tamerayd.in)
+ * Licensed under MIT
+ */
+.carouselar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+  .carouselar__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap; }
+  .carouselar__inner-container {
+    height: 100%;
+    transition: transform 0.3s; }
+  .carouselar__inner-container-nomove {
+    height: 100%;
+    }
+  .carouselar__image-container {
+    position: relative;
+    height: 100%;
+    transition: width 0.3s;
+    display: inline-block; }
+  .carouselar__image {
+    cursor: pointer;
+    position: absolute;
+    max-width: 740px;
+    max-height: 300px;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 740px;
+    height: 300px;
+    bottom: 0;
+    margin: auto;
+  }
+ /* .carouselar__image {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto; }*/
+  .carouselar__loader {
+    border-radius: 24px;
+    border: 2px dashed #fff;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -12px 0 0 -12px;
+    -webkit-animation: carouselar-spinner 1.8s linear infinite;
+    -moz-animation: carouselar-spinner 1.8s linear infinite;
+    animation: carouselar-spinner 1.8s linear infinite; }
+  .carouselar__navigation {
+    position: relative; }
+.carouselar__navigation__index {
+  width: 100%;
+  text-align: right;
+  position: relative;
+  margin-top: -38px;
+  right: 20px;
+}
+ /*   .carouselar__navigation__index {
+      width: 100%;
+      text-align: center; }*/
+    .carouselar__navigation__button {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      cursor: pointer;
+      margin-top: 141px;
+      /*padding: 12px; */}
+      .carouselar__navigation__button--active, .carouselar__navigation__button:hover {
+        color: #fff;
+        background: #333; }
+      .carouselar__navigation__button--prev {
+        left: 0; }
+      .carouselar__navigation__button--next {
+        right: 0; }
+      .carouselar__navigation__button--active, .carouselar__navigation__button--index {
+        position: relative;
+        display: inline-block;
+        margin-top: 0px;
+        margin-left: 6px;}
+
+@-webkit-keyframes carouselar-spinner {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(360deg); } }
+
+@-moz-keyframes arouselar-spinner {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes arouselar-spinner {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(360deg); } }
+
+
+
+.dianClass {
+  width: 100%;
+  text-align: right;
+  position: relative;
+  margin-top: -30px;
+  /*right: 20px;*/
+}
+/*   .dianClass {
+     width: 100%;
+     text-align: center; }*/
+.dianClassSpan {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  margin-top: 141px;
+  /*padding: 12px; */}
+.dianClassSpan--active, .dianClassSpan:hover {
+  color: #fff;
+  background: #333;
+  background: url("../demo/images/bannerA.png") no-repeat;
+  height: 8px;
+  width: 8px;
+}
+.dianClassSpan--active, .dianClassSpan--index {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 12px;}
+
+.aa {
+  background: url("../demo/images/bannerC.png") no-repeat;
+  width: 8px;
+  height: 8px;
+  padding-top: 7px;
+  display: inline-block;
+}
+.project-wrapper img.carouselar__image {
+  width: 100%;
+  max-width: 100%;
+}

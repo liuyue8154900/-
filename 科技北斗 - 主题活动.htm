@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://www.kejibeidou.com/activity/ActivityInfo/index?enterpriseCode=1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="./5_files/nav.css">
+    <link rel="stylesheet" type="text/css" href="./5_files/reset.css">
+    
+    <link rel="stylesheet" type="text/css" href="./5_files/style.css">
+    <link rel="stylesheet" type="text/css" href="./5_files/jquery.autocomplete.css">
+    <title>科技北斗--主题活动</title>
+    <link type="image/x-icon" rel="shortcut icon" href="http://www.kejibeidou.com/images/favicon.ico">
+    <script src="./5_files/jquery-2.2.4.min.js"></script>
+    <script src="./5_files/stringutils.js"></script>
+    <script src="./5_files/config.js"></script>
+    <script src="./5_files/jquery.cookie.js"></script>
+    <script src="./5_files/portal.js"></script>
+    <script src="./5_files/uiportal.js"></script>
+    <script src="./5_files/jquery.autocomplete.js"></script>
+    <script src="./5_files/search.js"></script>
+    
+    
+
+
+
+    <style>
+        .modal-open {
+            overflow: hidden;
+        }
+
+        .modal {
+            display: none;
+            bottom: 0;
+            left: 0;
+            outline: 0 none;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 1050;
+            background: rgba(0, 0, 0, 0.30) none repeat scroll 0 0;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 17px;
+        }
+
+            .modal > .content {
+                position: static;
+            }
+
+        .hidden {
+            display: none;
+        }
+
+        #searchType > div.searchName {
+            display: none;
+        }
+
+        #searchType:hover > div.searchName {
+            display: block;
+        }
+
+        .modal-open {
+            overflow: hidden;
+        }
+
+        .modal {
+            display: none;
+            bottom: 0;
+            left: 0;
+            outline: 0 none;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 1050;
+            background: rgba(0, 0, 0, 0.30) none repeat scroll 0 0;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 17px;
+        }
+
+            .modal > .content {
+                position: static;
+            }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div style="height:50px;line-height:50px;">
+        <div class="nwarp" style="position:relative;">
+            <!-- 门户 -->
+            <h1 class="nlogo"><a><img alt="门户logo" src="./5_files/logo.png"></a></h1>
+            <div class="clearfix  styled-select" style="cursor: pointer;display:inline-block;position:relative;color:#fff;font-size:18px;margin-right:15px; line-height: 50px;float:left;">
+                <select id="org" style="cursor:pointer;width: 81px;" title="科技北斗">
+                    
+                <option data-ustate="false" style="background:#fff;" data-logo="/activity_static/Header/Content/images//logo.png" selected="selected" value="1">科技北斗</option></select>
+            </div>
+            <!-- 未登录 -->
+            <span class="user-nologin" style="" id="loginBtndiv">
+                <span id="ulogin" style="margin:0 20px;color:#0097e0;cursor:pointer;">请登录</span>
+                <span id="uregister" style="cursor: pointer;">免费注册</span>
+            </span>
+            <!-- 已登录 -->
+            <span id="userInfoSpan" class="user-login header-userinfo" style="position: relative; display: none;">
+                <span>
+                    <span class="nav_username" style="margin-left:20px;color:#0097e0;cursor:pointer;"></span>
+                    <img alt="" src="./5_files/4_07.png" style="vertical-align:middle;">
+                </span>
+                <ul id="menu" style="position: absolute">
+                    <li id="uinfo">个人信息</li>
+                    <li id="uattention">我的关注</li>
+                    <li id="ucollection">我的收藏</li>
+                    <li id="ulogout" style="display: none;height:30px;line-height:30px;"><img alt="登出" title="登出" src="./5_files/icon-off.png" style="vertical-align:middle;"></li>
+                    <li><img alt="" src="./5_files/map_14.png"></li>
+                </ul>
+            </span>                     
+            <a class="phone">
+                <img src="./5_files/shouji.png">手机版
+                <div>
+                    <img src="./5_files/shouerweima.png">
+                    <span>扫一扫下载APP</span>
+                </div>
+            </a>
+            <a id="header_rz">
+                <span class="ent-reg" style="margin-left: 20px"><img src="./5_files/ruzhu.png" style="vertical-align:-4px">企业入驻</span>
+            </a>
+            <!-- 运营 -->
+            <div class="houtai" style="display: none; cursor:pointer"><img src="./5_files/hou.png">运营管理</div>
+            <!-- 右侧附件信息 -->
+            
+          
+       
+           
+
+        </div>
+    </div>
+    <header id="nheader" class="nheadBor">
+        <div class="nwarp" style="position:relative">
+        
+            <!-- 应用模块 -->
+            <ul id="appModule" class="nnavLeft">
+                
+                
+                
+                
+            <li><a data-appid="1" href="http://www.kejibeidou.com/index.html" target="_blank">科技资讯</a></li><li><a data-appid="2" href="http://www.kejibeidou.com/projectHome.html#/home/1" target="_blank">项目合作</a></li><li><a data-appid="22" href="http://www.kejibeidou.com/paperHome.html#/home/1" target="_blank">论文分享</a></li><li><a data-appid="23" href="http://www.kejibeidou.com/patentHome.html#/home/1" target="_blank">专利推广</a></li><li><a data-appid="4" href="http://www.kejibeidou.com/demand/index.html?enterpriseCode=1" target="_blank">科研需求</a></li><li><a class="cur" data-appid="3" href="http://www.kejibeidou.com/activity/ActivityInfo/index?enterpriseCode=1" target="_blank">主题活动</a></li><li><a data-appid="81" href="http://www.kejibeidou.com/expertHome.html#/home/1" target="_blank">专家</a></li></ul>
+            <div id="appModuleAdd" class="search_add" style="position:absolute;display: none;border:0;margin-top:25px;">
+                <a href="http://www.kejibeidou.com/enterprise.html#/appModuleManager/" target="_blank"><img src="./5_files/header-add.png"> </a>
+            </div>
+            <!-- 搜索 -->
+            <form class="nsearch-box ng-pristine ng-valid" name="searchForm" onsubmit="return false">
+                <!--<div style="cursor: pointer;" class="nsearch-group clearfix styled-select" tabindex="2">-->
+                <!--<select id="searchModule" style="cursor:pointer;width: 75px; margin-left: -11px; background: url(/images/4_07.png) no-repeat right;color: #808080;font-size: 13px;">-->
+                <!--<option value="1" style="cursor:pointer;">科技资讯</option>-->
+                <!--<option value="2" style="cursor:pointer;">开放创新</option>-->
+                <!--<option value="3" style="cursor:pointer;">需求中心</option>-->
+                <!--<option value="4" style="cursor:pointer;">主题活动</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <div class="ninput-group clearfix">                 
+                        <div class="xdsoft_autocomplete" style="display: block; width: 190px;"><input type="text" id="searchInput" value="" placeholder="请输入关键字" name="keyword" onclick="portal.isLogin()" data-node="searchInput" ga_event="nav_search_input" autocomplete="off" class="xdsoft_input" style="font-size: 16px; background: transparent;"><div class="xdsoft_autocomplete_dropdown" style="left: 0px; top: 35px; margin-left: 0px; margin-right: 0px; width: 272px;"></div><input readonly="" class="xdsoft_autocomplete_hint" style="animation: none 0s ease 0s 1 normal none running; background-blend-mode: normal; border: 0px solid transparent; border-radius: 4px; border-collapse: separate; border-image-outset: 0px; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; bottom: auto; box-shadow: none; box-sizing: content-box; break-after: auto; break-before: auto; break-inside: auto; caption-side: top; clear: none; clip: auto; color: rgb(51, 51, 51); cursor: auto; direction: ltr; display: block; empty-cells: show; float: left; font-family: arial; font-kerning: auto; font-size: 16px; font-stretch: normal; font-style: normal; font-variant: normal; font-variant-ligatures: normal; font-weight: 400; height: 15px; image-rendering: auto; isolation: auto; left: 0px; letter-spacing: normal; line-height: 18px; list-style: disc outside none; margin: 0px; max-height: none; max-width: none; min-height: 0px; min-width: 0px; mix-blend-mode: normal; motion: none 0px auto 0deg; object-fit: fill; object-position: 50% 50%; opacity: 1; orphans: auto; outline: transparent none 0px; outline-offset: 0px; overflow-wrap: normal; overflow: visible; padding: 10px; pointer-events: auto; position: absolute; resize: none; right: auto; speak: normal; table-layout: auto; tab-size: 8; text-align: start; text-align-last: auto; text-decoration: none; text-indent: 0px; text-rendering: auto; text-shadow: none; text-overflow: clip; text-transform: none; top: 0px; touch-action: auto; transition: all 0s ease 0s; unicode-bidi: normal; vertical-align: baseline; visibility: visible; white-space: normal; widows: 1; width: 190px; will-change: auto; word-break: normal; word-spacing: 0px; word-wrap: normal; z-index: 1; zoom: 1; -webkit-appearance: none; backface-visibility: visible; -webkit-background-clip: border-box; -webkit-background-composite: source-over; -webkit-background-origin: padding-box; border-spacing: 0px; -webkit-border-image: none; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-flex-group: 1; -webkit-box-lines: single; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-clip-path: none; column-count: auto; column-gap: normal; column-rule-color: rgb(51, 51, 51); column-rule-style: none; column-rule-width: 0px; column-span: none; column-width: auto; -webkit-filter: none; align-items: stretch; align-self: stretch; flex: 0 1 auto; flex-flow: row nowrap; -webkit-font-smoothing: auto; -webkit-highlight: none; -webkit-hyphenate-character: auto; -webkit-line-break: auto; -webkit-locale: &quot;en&quot;; -webkit-margin-before-collapse: collapse; -webkit-margin-after-collapse: collapse; -webkit-mask-box-image-outset: 0px; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-mask-box-image-source: none; -webkit-mask-box-image-width: auto; -webkit-mask: none 0% 0% / auto repeat border-box border-box; -webkit-mask-composite: source-over; -webkit-mask-size: auto; order: 0; perspective: none; perspective-origin: 105px 17.5px; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; shape-outside: none; shape-image-threshold: 0; shape-margin: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.4); -webkit-text-combine: none; -webkit-text-decorations-in-effect: none; -webkit-text-emphasis-color: rgb(51, 51, 51); -webkit-text-emphasis-position: over; -webkit-text-emphasis-style: none; -webkit-text-fill-color: rgb(51, 51, 51); -webkit-text-orientation: vertical-right; -webkit-text-security: none; -webkit-text-stroke-color: rgb(51, 51, 51); -webkit-text-stroke-width: 0px; transform: none; transform-origin: 105px 17.5px 0px; transform-style: flat; -webkit-user-drag: auto; -webkit-user-modify: read-only; -webkit-user-select: text; -webkit-writing-mode: horizontal-tb; -webkit-app-region: no-drag; buffered-rendering: auto; clip-path: none; clip-rule: nonzero; mask: none; filter: none; flood-color: rgb(0, 0, 0); flood-opacity: 1; lighting-color: rgb(255, 255, 255); stop-color: rgb(0, 0, 0); stop-opacity: 1; color-interpolation: sRGB; color-interpolation-filters: linearRGB; color-rendering: auto; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; marker-end: none; marker-mid: none; marker-start: none; mask-type: luminance; shape-rendering: auto; stroke: none; stroke-dasharray: none; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; alignment-baseline: auto; baseline-shift: 0px; dominant-baseline: auto; text-anchor: start; writing-mode: horizontal-tb; vector-effect: none; paint-order: fill; cx: 0px; cy: 0px; x: 0px; y: 0px; r: 0px; rx: 0px; ry: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"></div>                                                    
+                         <div class="nbtn-submit">
+                        <button type="submit" ga_event="nav_search">
+                            <i class="nicon nicon-search nicon-large" style="background: url(/activity_static/Header/Content/images/icon-search.png) no-repeat center;"></i>
+                        </button>
+                    </div>
+                    <span id="searchmsg" style="color: red; display: inline-block"></span>
+                </div>
+                <ul style="display: none;">
+                    <li><a onclick="search(&#39;aaaaa&#39;)">aaaaaaa</a></li>
+                </ul>
+            </form>
+            <!-- 运营 -->
+            <!--<div class="search_add houtai"><a href="http://www.kejibeidou.com/console" target="_blank">运营管理</a></div> -->
+
+        </div>
+    </header>
+    <div id="loginModal" hidden="" style="">
+        <div class="content_mark"></div>
+        <div class="dpin login-right login3" style="width:490px;height:378px;position: absolute; z-index: 556; padding-top:0px;  position: fixed !important;
+    top: 50%;
+    left: 50%;
+    margin-left: -195px;margin-top: -216px; background-color:#fff; ">
+            <form id="loginId" name="loginForm" style="padding-left:68px;  text-align:left; " onsubmit="return false">
+                <h1 style="font-weight: bold; height:45px; line-height:45px; color:#4c4c4c;font-size:22px;margin-left:-64px;border-bottom:1px solid #e5e5e5;position:relative; ">
+                    <span style="display:inline-block;font-size:16px;color:#4c4c4c;width:140px;height:44px;line-height:44px;padding-left:20px;">账号登录</span>
+					<img src="./5_files/guanbi.png" id="close" class="close" style="position:absolute;right:20px;top:12px;cursor:pointer;">
+					</h1>
+
+                <span id="errorMsg" style="top: 20px; padding-left:20px;  position: relative;display: none;" class="loginForm-message">
+                    <i style="background:url(&#39;../images/icon-error.png&#39;)no-repeat center center;margin-left:-30px;margin-top:-8px"></i>
+                    <span class="error"></span>
+                </span>
+
+                <div class="loginFormInp inp" style="margin-top: 30px; width: 348px;height:46px;">
+                    <b class="icon icon-uid" style="margin-top:4px;"></b>
+                    <input style="width: 314px;height:34px;" type="text" id="loginName" name="inputUserName" placeholder="请输入手机号">
+                </div>
+                <div class="loginFormInp inp" style="width: 348px;height:46px;">
+                    <b class="icon icon-pwd" style="margin-top:4px;"></b>
+                    <input style="width: 314px;height:34px;" type="password" id="password" name="inputPassword" placeholder="请输入密码">
+                </div>
+                <div class="loginFormCheck" style="margin-top:24px">
+                    <label><input type="checkbox"><span style="color:#b2b2b2">自动登录</span></label>
+                </div>
+                <!--<div class="loginFormPwdLine" style="margin-right:75px;">
+                    <a href="/reg.html#/mobile" target="_self"><span style="padding-right: 14px;">忘记密码</span></a>
+                    <a href="/reg.html#/cell" target="_self"><span style="color: #0097e0;">立即注册</span></a>
+                </div>-->
+                <div class="loginFormBtn" style="margin-top:66px">
+                    <button type="submit" class="btn1" id="loginBtn" style="width: 158px;height:38px;">登录</button>
+                <button type="submit" class="btn1 company-btnn" id="ruzhuBtn">企业入驻</button>
+            </div>
+            <div class="loginFormPwdLine" style="margin-right:60px;width:356px; margin-top:14px;">
+                <a href="http://www.kejibeidou.com/reg.html#/mobile" target="_self"><span style="padding-right: 14px;float:right; color:#b2b2b2">忘记密码</span></a>
+                <a href="http://www.kejibeidou.com/reg.html#/cell" target="_self"><span style="color: #0097e0;">注册账号</span></a>
+                  
+			 </div>
+            </form>
+        </div>
+    </div>
+<!-- 运营登录 -->
+<div id="consoleLoginModal" style="display:none">
+    <div class="content_mark"></div>
+    <div class="dpin login-right login4" style="background-color:#fff;padding-top:0px; text-align:left">
+        <form name="consoleLoginForm" class="pd-left30 ng-pristine ng-valid" id="consoleLoginId" style="padding-left:65px;" onsubmit="return false">
+            <h1 class="modalheader">
+                <span>登录到企业运营平台</span>
+                <img src="./5_files/guanbi.png" class="close">
+            </h1>
+            <span id="consoleErrorMsg" class="loginForm-message" style="padding-left:25px; display:none">
+                <i class="span-icon" style="margin-left: -30px; margin-top: -8px;"></i>
+                <span class="error">adsfdsa</span>
+            </span>
+            <div class="pwLable">
+                请再次确认密码:
+            </div>
+            <div class="loginFormInp inp" style="width: 368px;height:46px;margin-top:10px;">
+                <b class="icon icon-pwd" style="margin-top:4px;"></b>
+                <input style="width: 334px;height:34px;" type="password" autocomplete="off" disableautocomplete="" id="consolePassword" placeholder="请输入密码">
+            </div>
+            <div class="loginFormBtn" style="margin-top: 35px;">
+                <button type="submit" class="btn1" id="consoleLoginBtn" style="width: 380px;">登 录</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#manage").click(function () {
+            var checkLoginResult = portal.checkLogin();
+            if (!checkLoginResult) {
+                return false;
+            }
+            //链接
+            location.href = "http://" + window.location.host + "/activity/Signup/MyList?enterpriseCode=1&source=1&state=&pageNum=1&pageSize=5";
+        });
+
+        $(document).on("LoginEvent", function () {
+            window.location.reload();
+        });
+    });
+</script>
+
+<div>
+
+<div class="t_wraps innovate">
+<div class="main clearfix">
+    <div class="leftArc" style="width:740px;float:left;margin-right:24px">
+        <div class="pic" id="box">
+            <p class="prev_btn" id="btn1" style="cursor: pointer"></p>
+            <ul class="clearfix" id="lunbo">
+                                <li style="display: block;">
+                                    <a><img src="./5_files/activityweb.jpg">
+                                        <p class="text" style="text-align: left"><span style="width: 500px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block;"></span></p>
+                                    </a>
+                                </li>
+
+            </ul>
+            <p class="next_btn" id="btn2" style="cursor: pointer;"></p>
+            <ol id="hover">
+                            <li class="bg"></li>
+
+            </ol>
+        </div>
+        <div class="main_con">
+            <div class="act_list1" style="width: 765px;">
+                <p class="a_new" id="listMore">
+                    <img src="./5_files/zuixinhoudong.png" alt="">最新活动<a href="http://www.kejibeidou.com/activity/ActivityInfo/List?type=1&amp;pageNum=1&amp;pageSize=6&amp;source=1" style="margin-left:586px">更多&gt;</a>
+                </p>
+                <div class="check_list">
+                            <div class="check_right check_right1">
+                                <div>
+                                    <a href="http://www.kejibeidou.com/activity/activityInfo/Detail?code=148461245795300004&amp;source=1" target="_blank"><img src="./5_files/0820493287_u1o52v4m.uki.png" class="hover_a"></a>
+                                </div>
+                                <div class="contain_date">
+                                    
+
+                                    <div class="all all1">
+                                        <p class="act_name" style="margin-top: 0">
+                                            
+                                            <a class="textOverflow more_eighteen" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?code=148461245795300004&amp;source=1" target="_blank">2016汽车智能最具投资价值企业评选</a>
+                                        </p>
+                                        <p class="at_date"><img src="./5_files/icon2.png"><span>08:13开始</span></p>
+                                        <p class="at_date"><img src="./5_files/buxiang.png"><span class="textOverflow">牛车网、汽车智造</span></p>
+                                        <div class="space"></div>
+                                                <div class="ing finish">已结束</div>
+
+                                    </div>
+
+                                    <div class="rencentle">
+                                        <div class="triangle">
+                                            <a href="http://www.kejibeidou.com/activity/ActivityInfo/index?enterpriseCode=1">01.18</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="check_right check_right1">
+                                <div>
+                                    <a href="http://www.kejibeidou.com/activity/activityInfo/Detail?code=148273659902700001&amp;source=1" target="_blank"><img src="./5_files/1538087879_irs3ngx3.rpv.png" class="hover_a"></a>
+                                </div>
+                                <div class="contain_date">
+                                    
+
+                                    <div class="all all1">
+                                        <p class="act_name" style="margin-top: 0">
+                                            
+                                            <a class="textOverflow more_eighteen" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?code=148273659902700001&amp;source=1" target="_blank">微纳米复合材料与产业应用</a>
+                                        </p>
+                                        <p class="at_date"><img src="./5_files/icon2.png"><span>14:00开始</span></p>
+                                        <p class="at_date"><img src="./5_files/buxiang.png"><span class="textOverflow">中国科技会堂B103</span></p>
+                                        <div class="space"></div>
+                                                <div class="ing finish">已结束</div>
+
+                                    </div>
+
+                                    <div class="rencentle">
+                                        <div class="triangle">
+                                            <a href="http://www.kejibeidou.com/activity/ActivityInfo/index?enterpriseCode=1">12.27</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="check_right check_right1">
+                                <div>
+                                    <a href="http://www.kejibeidou.com/activity/activityInfo/Detail?code=148237363213200001&amp;source=1" target="_blank"><img src="./5_files/1029517427_xahy0anj.1vs.png" class="hover_a"></a>
+                                </div>
+                                <div class="contain_date">
+                                    
+
+                                    <div class="all all1">
+                                        <p class="act_name" style="margin-top: 0">
+                                            
+                                            <a class="textOverflow more_eighteen" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?code=148237363213200001&amp;source=1" target="_blank">3D打印及增材制造技术及其产业应用</a>
+                                        </p>
+                                        <p class="at_date"><img src="./5_files/icon2.png"><span>09:30开始</span></p>
+                                        <p class="at_date"><img src="./5_files/buxiang.png"><span class="textOverflow">中国科技会堂B103（地铁1号线木樨地站A1口出往西300米）</span></p>
+                                        <div class="space"></div>
+                                                <div class="ing finish">已结束</div>
+
+                                    </div>
+
+                                    <div class="rencentle">
+                                        <div class="triangle">
+                                            <a href="http://www.kejibeidou.com/activity/ActivityInfo/index?enterpriseCode=1">12.23</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="check_right check_right1">
+                                <div>
+                                    <a href="http://www.kejibeidou.com/activity/activityInfo/Detail?code=148237446329300002&amp;source=1" target="_blank"><img src="./5_files/1041000438_jxgrlh1r.uz0.png" class="hover_a"></a>
+                                </div>
+                                <div class="contain_date">
+                                    
+
+                                    <div class="all all1">
+                                        <p class="act_name" style="margin-top: 0">
+                                            
+                                            <a class="textOverflow more_eighteen" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?code=148237446329300002&amp;source=1" target="_blank">智慧城市新政解读及应用探索</a>
+                                        </p>
+                                        <p class="at_date"><img src="./5_files/icon2.png"><span>14:30开始</span></p>
+                                        <p class="at_date"><img src="./5_files/buxiang.png"><span class="textOverflow">中国科技会堂B103 （地铁1号线木樨地站A1口出往西300米）</span></p>
+                                        <div class="space"></div>
+                                                <div class="ing finish">已结束</div>
+
+                                    </div>
+
+                                    <div class="rencentle">
+                                        <div class="triangle">
+                                            <a href="http://www.kejibeidou.com/activity/ActivityInfo/index?enterpriseCode=1">12.23</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                </div>
+
+                <div class="space" style="clear: left"></div>
+            </div>
+                    <div class="act_list1 activity_con">
+                        <p class="a_new" style="margin-top:0px">
+                            <img src="./5_files/huodongbaodao.png" alt="">活动报道<a href="http://www.kejibeidou.com/activity/Report/List?source=1&amp;pageNum=1&amp;pageSize=5" style="margin-left:586px">更多&gt;</a>
+                        </p>
+                                <div class="bg_white">
+                                    <div class="activity_list activity_list2" style="border: 0">
+                                        <div class="left">
+                                            <a href="http://www.kejibeidou.com/activity/Report/Detail?enterpriseCode=1&amp;code=147814175687900005&amp;source=1" target="_blank"><img src="./5_files/1057372873_2sev2llr.vtz.jpg" class="img160" style="margin-top: 0"></a>
+                                        </div>
+                                        <div class="center">
+                                            <p class="at_title">
+                                                <a class="textOverflow" href="http://www.kejibeidou.com/activity/Report/Detail?enterpriseCode=1&amp;code=147814175687900005&amp;source=1" target="_blank">北京软协30周年纪念活动暨第八届第三次会员代表大会</a>
+                                            </p>
+                                            <p class="at_content">
+                                                <a href="http://www.kejibeidou.com/activity/Report/Detail?enterpriseCode=1&amp;code=147814175687900005&amp;source=1" target="_blank">北京软协的30年，也是北京软件产业从无到有，从弱小走向强大的30年。伴随着中国改革开放的主旋律，北京软件一路澎湃激昂地走...</a>
+                                            </p>
+                                            <div class="page_detail">
+                                                <p class="name">
+                                                    <a target="_blank" href="http://www.kejibeidou.com/projectHome.html#/personalPage/147814126642500253"><img src="./5_files/user_header_default.png" class="user_head user_head4"><span class="textOverflow" style="width: 70px">张磊</span></a>
+                                                </p>
+                                                <p class="at_date" style="margin-left: 18px">
+                                                    <img src="./5_files/icon-118.png">
+                                                    <span style="display: inline-block; width: 130px">2016-11-03</span>
+                                                </p>
+                                                <dl class="demand_recommend" style="width: 50%">
+                                                    <dd class="recommend_time">
+                                                        <a>
+                                                            <img src="./5_files/icon-128.png" alt=""><span>0</span>
+                                                        </a>
+                                                        <a><img src="./5_files/icon-129.png" alt=""><span>271</span></a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg_white">
+                                    <div class="activity_list activity_list2" style="border: 0">
+                                        <div class="left">
+                                            <a href="http://www.kejibeidou.com/activity/Report/Detail?enterpriseCode=1&amp;code=147623553209800004&amp;source=1" target="_blank"><img src="./5_files/pic.png" class="img160" style="margin-top: 0"></a>
+                                        </div>
+                                        <div class="center">
+                                            <p class="at_title">
+                                                <a class="textOverflow" href="http://www.kejibeidou.com/activity/Report/Detail?enterpriseCode=1&amp;code=147623553209800004&amp;source=1" target="_blank">互联网信息服务业协同发展</a>
+                                            </p>
+                                            <p class="at_content">
+                                                <a href="http://www.kejibeidou.com/activity/Report/Detail?enterpriseCode=1&amp;code=147623553209800004&amp;source=1" target="_blank">   北京与香港互联网及信息服务业把握新商机、创造新需求、开拓新市场，促进京港两地企业进行经贸洽谈与对接，在第二十届北京...</a>
+                                            </p>
+                                            <div class="page_detail">
+                                                <p class="name">
+                                                    <a target="_blank" href="http://www.kejibeidou.com/projectHome.html#/personalPage/145826540976200056"><img src="./5_files/7441473208854905-973658144" class="user_head user_head4"><span class="textOverflow" style="width: 70px">侯淑媛</span></a>
+                                                </p>
+                                                <p class="at_date" style="margin-left: 18px">
+                                                    <img src="./5_files/icon-118.png">
+                                                    <span style="display: inline-block; width: 130px">2016-10-12</span>
+                                                </p>
+                                                <dl class="demand_recommend" style="width: 50%">
+                                                    <dd class="recommend_time">
+                                                        <a>
+                                                            <img src="./5_files/icon-128.png" alt=""><span>1</span>
+                                                        </a>
+                                                        <a><img src="./5_files/icon-129.png" alt=""><span>301</span></a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+
+        </div>
+
+    </div>
+<div class="right_con" style="float: left">
+    <div class="b_detail" style="margin-top: 0px;">
+        <div class="right_list">
+            <div class="user_charge">
+                <div class="company" style="border-top: 3px solid #0097e0; width: 234px;">
+                    <a class="b_company" style="cursor: default">
+                                <img src="./5_files/weidenglu.png" alt="" style="cursor: default">
+                                <span style="border: 0; color: #aaa; cursor: default; margin-top: 10px" class="textOverflow"> 未登录</span>
+                                </a><a href="javascript:" class="click_enter" style="color:#0097e0;text-decoration:underline" onclick="manage.click(); return false;">请点击登录！</a>
+
+                    
+                    <div class="two_btn" style="margin-top: 30px">
+                        <a href="javascript:" id="manage">活动管理</a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_charge" style="margin-top: 18px">
+                <p>
+                    <img src="./5_files/remenhuodong.png" alt="" class="suoshuqiye">热门活动
+                </p>
+                <div class="hot_fff">
+                        
+                                <ul class="hot_list">
+                                            <li>
+                                                        <span class="number number1"><i>1</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147632773949800005&amp;source=1">
+                                                    2016年杭州-云栖大会
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number number1"><i>2</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147306086541600004&amp;source=1">
+                                                    2016中关村创新创业季—科技+未来城市...
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number number1"><i>3</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147331935742700001&amp;source=1">
+                                                    中韩尖端技术投资合作洽谈会
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number"><i>4</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147313140371800002&amp;source=1">
+                                                    科技创新主题征文活动
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number"><i>5</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147814164450100001&amp;source=1">
+                                                    北京软协30周年纪念活动暨第八届第三次会...
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number"><i>6</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147617663909400012&amp;source=1">
+                                                    京港互联网信息服务业协同发展专题活动的报...
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number"><i>7</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=148461245795300004&amp;source=1">
+                                                    2016汽车智能最具投资价值企业评选
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number"><i>8</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=148273659902700001&amp;source=1">
+                                                    微纳米复合材料与产业应用
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number"><i>9</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147651956750700001&amp;source=1">
+                                                    关于举办高校实践教学改革与人才培养模式创...
+                                                    
+                                                </a>
+                                            </li>
+                                            <li>
+                                                        <span class="number"><i>10</i></span>
+
+
+                                                <a target="_blank" href="http://www.kejibeidou.com/activity/ActivityInfo/Detail?enterpriseCode=1&amp;code=147281195346300001&amp;source=1">
+                                                    股权融资密码实战分享会
+                                                    
+                                                </a>
+                                            </li>
+
+                                </ul>
+
+
+                                
+                </div>
+                <div class="RightPic">
+                    <img src="./5_files/index1.jpg" alt="">
+                    <img src="./5_files/index2.jpg" alt="">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+</div>
+</div>
+        <script>
+            var uls, ols, box,
+                uls = document.getElementById("lunbo").getElementsByTagName("li"),
+                ols = document.getElementById("hover").getElementsByTagName("li"),
+                box = document.getElementById("box"),
+                btn1 = document.getElementById("btn1"),
+                btn2 = document.getElementById("btn2");
+
+            var k = 0, timer = 0;
+            //向左
+            btn1.onclick = function () {
+                k--;
+                if (k < 0) {
+                    k = uls.length - 1
+                }
+                for (var i = 0; i < uls.length; i++) {
+                    uls[i].style.display = "none";
+                    ols[i].className = "";
+                }
+                uls[k].style.display = "block";
+                ols[k].className = "bg";
+            }
+            //向右
+            btn2.onclick = function () {
+                k++;
+                if (k > uls.length - 1) {
+                    k = 0;
+                }
+                for (var i = 0; i < uls.length; i++) {
+                    uls[i].style.display = "none";
+                    ols[i].className = "";
+                }
+                uls[k].style.display = "block";
+                ols[k].className = "bg";
+            }
+            //自动轮播
+            function auto() {
+                for (var i = 0; i < uls.length; i++) {
+                    uls[i].style.display = "none";
+                    ols[i].className = "";
+                }
+                k++;
+                if (k > ols.length - 1) {
+                    k = 0;
+                }
+
+                uls[k].style.display = "block";
+                ols[k].className = "bg";
+            }
+            timer = setInterval(auto, 2000);
+            //滑过变图片
+            for (var j = 0; j < ols.length; j++) {
+                ols[j].index = j;
+                ols[j].onmousemove = function () {
+                    for (var i = 0; i < uls.length; i++) {
+                        uls[i].style.display = "none";
+                        ols[i].className = "";
+                    }
+                    uls[this.index].style.display = "block";
+                    this.className = "bg";
+                    k = this.index;
+                }
+            }
+            //滑过大盒子停止图片轮播
+            box.onmousemove = function () {
+                timer = window.clearInterval(timer);
+                btn1.style.display = "block";
+                btn2.style.display = "block";
+
+            }
+            box.onmouseout = function () {
+                timer = window.clearInterval(timer);
+                timer = setInterval(auto, 2000);
+                btn1.style.display = "none";
+                btn2.style.display = "none";
+            }
+        </script>
+
+        
+
+
+    <ul class="nreturn-top">
+        <li><a href="http://www.kejibeidou.com/activity/ActivityInfo/index?enterpriseCode=1#top" target="_self" style="display: inline-block; width: 100%; height: 100%;"></a></li>
+        <li onclick="feedback()"></li>
+        <li onclick="aboutUs()"></li>
+    </ul>
+    <footer id="footerLogin">
+        <div class="warp">
+            <div class="copy" style="text-align:center;padding-top:34px;">
+                <p style="color:#4c4c4c;font-size:15px;text-align:center;display:inline-block;margin:0;">
+                    合作伙伴：<a href="http://science.china.com.cn/" target="_blank">中国网科学中国</a>
+                    <a href="http://www.xmuchong.com/" style="margin-left: 20px;margin-right:20px;" target="_blank">小木虫学术论坛</a><img alt="" src="./5_files/0021.png" style="vertical-align:middle;margin-right:20px;"><span onclick="feedback()" style="margin-right:20px;cursor:pointer;">意见反馈</span><span onclick="aboutUs()" style="cursor:pointer;">关于我们</span>
+                </p>
+                <p>
+                    copyright 2015 kejibeidou.com All Rights Reserved　版权所有 • 科技北斗　ICP备案证书号：京ICP备13026916号-4<br>
+                    科技北斗是网络服务平台方，若您发现您的权利被侵害，请发起知识产权投诉，邮箱地址：service@kejibeidou.com
+                </p>
+            </div>
+        </div>
+    </footer>
+    <div class="modal" id="alertModal" style="z-index:10000">
+        <div class="send send4" style="top: 200px; left: 50%; margin-left:-200px">
+            <p class="title">
+                提示<img src="./5_files/guanbi(1).png" alt="" onclick="CClose()">
+            </p>
+            <img src="./5_files/1_003.png" alt="" style="margin: 26px 10px 0 20px;">
+            <p class="title2" id="alertContent"></p>
+            <div style="height: 20px;"></div>
+            <p class="s3-btn"><span style="width: 120px;" onclick="CClose()">确定</span></p>
+            <p style="height: 35px;"></p>
+        </div>
+    </div>
+
+
+    <div style="text-align: center;margin-top: -20px;">
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260328605'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1260328605%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1260328605"><a href="http://www.cnzz.com/stat/website.php?web_id=1260328605" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="./5_files/pic.gif"></a></span><script src="./5_files/stat.php" type="text/javascript"></script><script src="./5_files/core.php" charset="utf-8" type="text/javascript"></script>
+    </div>
+
+    <!--底部-->
+    
+
+
+
+
+<script type="text/javascript">
+
+    var CurrentModule = "3";
+    var indexUrl = "/activity/ActivityInfo/index";
+    function CAlert(content) {
+        $("body").addClass("modal-open");
+        $("#alertModal").show();
+        $("#alertContent").text(content);
+    }
+
+    function CClose() {
+        $("body").removeClass("modal-open");
+        $("#alertModal").hide();
+    }
+</script>
+
+</body></html>
